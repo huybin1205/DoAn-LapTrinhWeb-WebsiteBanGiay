@@ -1,0 +1,11 @@
+﻿@using WebsiteBanGiay.Models;
+
+<div class="menu_nav">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="#">@item.TenLoai</a></li>
+        }
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>

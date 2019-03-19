@@ -1,0 +1,14 @@
+﻿
+<div class="col-lg-4 footer_col">
+    <div class="footer_menu">
+        <div class="footer_title">Hệ thống cửa hàng</div>
+        <ul class="footer_list">
+            @foreach(var item in Model) { 
+                <li>
+                    <a href="#"><div>@item.TenCH - @item.SoDtCH</div></a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
