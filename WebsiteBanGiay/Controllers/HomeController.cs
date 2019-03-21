@@ -33,7 +33,8 @@ namespace WebsiteBanGiay.Controllers
 
         public PartialViewResult ProductsPartial()
         {
-            return PartialView();
+            var list = db.SanPhams.Take(9).ToList();
+            return PartialView(list);
         }
 
         public PartialViewResult NavigationPartial()

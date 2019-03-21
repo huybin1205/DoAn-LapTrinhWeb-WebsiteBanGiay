@@ -4,8 +4,8 @@
     <ul>
         @foreach (var item in Model)
         {
-            <li><a href="#">@item.TenLoai</a></li>
+            <li><a href="/Product/SanPham?id=@item.MaLoai">@item.TenLoai</a></li>
         }
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Liên hệ</a></li>
     </ul>
 </div>

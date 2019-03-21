@@ -8,24 +8,29 @@
 <div class="container" style="margin-top:79px">
     <div class="row" id="row-user-login">
         <div class="col-lg-12">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
             <center>
+                <h4>@ViewBag.ABC</h4>
+                <h4 style="color:red;text-align:center">@ViewBag.Thongbao</h4>
                 <div>
                     <div>
                         <h2>Đăng nhập</h2>
                     </div>
                     <div>
-                        <h4>Tên đăng nhập</h4>
-                        <input id="Text1" type="text" placeholder="Tên đăng nhập" />
+                        <input name="txtTenDN" type="text" placeholder="Tên đăng nhập" />
+                        <div style="color:red">@ViewData["Loi1"]</div>
                     </div>
                     <div>
-                        <h4>Mật khẩu</h4>
-                        <input id="Password1" type="password" placeholder="Mật khẩu" />
+                        <input name="txtMatKhau" type="password" placeholder="Mật khẩu" />
+                        <div style="color:red">@ViewData["Loi2"]</div>
                     </div>
                     <div>
-                        <input id="btnLogin" class="btn btn-danger" type="submit" value="Đăng nhập" />
+                        <input id="btnLogin" name="btnLogin" class="btn btn-danger" type="submit" value="Đăng nhập" />
                     </div>
                     <div>
-                        <a href="@Url.Content("/User/Register")" class="btn btn-info" style="width:300px;color:white;font-size:15px">Đăng ký</a>
+                        <a href="@Url.Content("/User/Register")" class="btn btn-info" style="width:300px;height:35px;color:white;font-size:16px">Đăng ký</a>
                     </div>
                     <div>
                         <h5>
@@ -34,6 +39,7 @@
                     </div>
                 </div>
             </center>
+            }
         </div>
     </div>
 </div>

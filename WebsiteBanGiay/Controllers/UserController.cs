@@ -11,8 +11,36 @@ namespace WebsiteBanGiay.Controllers
     {
         DatabaseDataContext db = new DatabaseDataContext();
         // GET: User
+        [HttpGet]
         public ActionResult Login()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(FormCollection f)
+        {
+            var ten = f["txtTenDN"].ToString();
+            var matkhau = f["txtMatKhau"].ToString();
+            if(String.IsNullOrEmpty(ten))
+            {
+                ViewData["Loi1"] = "Phải nhập tên đăng nhập";
+            }
+            if(String.IsNullOrEmpty(matkhau))
+            { 
+                    ViewData["Loi2"] = "Phải nhập mật khẩu";
+                return View();
+            }
+                KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TenTK == ten && n.MatKhauTK == matkhau);
+                if (kh != null)
+                {
+                    ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
+                    Session["Taikhoan"] = kh;
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
+
             return View();
         }
 
@@ -32,7 +60,7 @@ namespace WebsiteBanGiay.Controllers
                     db.KhachHangs.InsertOnSubmit(kh);
                     //Lưu lên csdl
                     db.SubmitChanges();
-                    RedirectToAction("Login");
+                    return RedirectToAction("Login");
                 }
             }
             catch (Exception ex)
