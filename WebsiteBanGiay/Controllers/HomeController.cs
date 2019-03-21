@@ -9,7 +9,7 @@ namespace WebsiteBanGiay.Controllers
 {
     public class HomeController : Controller
     {
-        DatabaseDataContext db = new DatabaseDataContext();
+        dbQuanLyBanGiayDataContext db = new dbQuanLyBanGiayDataContext();
         // GET: Home
         public ActionResult Index()
         {
@@ -33,13 +33,13 @@ namespace WebsiteBanGiay.Controllers
 
         public PartialViewResult ProductsPartial()
         {
-            var list = db.SanPhams.Take(9).ToList();
+            var list = db.Giays.Take(9).ToList();
             return PartialView(list);
         }
 
         public PartialViewResult NavigationPartial()
         {
-            var list = from s in db.Loais select s;
+            var list = from s in db.DanhMucs select s;
             return PartialView(list);
         }
 

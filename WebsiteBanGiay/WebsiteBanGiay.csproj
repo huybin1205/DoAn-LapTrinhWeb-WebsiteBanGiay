@@ -133,10 +133,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database.designer.cs">
+    <Compile Include="Models\dbQuanLyBanGiay.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.dbml</DependentUpon>
+      <DependentUpon>dbQuanLyBanGiay.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -436,9 +436,9 @@
     <Content Include="plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="plugins\font-awesome-4.7.0\scss\_variables.scss" />
-    <Content Include="Models\Database.dbml">
+    <Content Include="Models\dbQuanLyBanGiay.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Database.designer.cs</LastGenOutput>
+      <LastGenOutput>dbQuanLyBanGiay.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -482,9 +482,9 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Home\NavigationPartial.cshtml" />
     <Content Include="Views\Home\BranchPartial.cshtml" />
-    <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Product\SanPham.cshtml" />
     <Content Include="Views\Product\ChiTietSanPham.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -506,8 +506,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Database.dbml.layout">
-      <DependentUpon>Database.dbml</DependentUpon>
+    <None Include="Models\dbQuanLyBanGiay.dbml.layout">
+      <DependentUpon>dbQuanLyBanGiay.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

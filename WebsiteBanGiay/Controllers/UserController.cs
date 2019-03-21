@@ -9,7 +9,7 @@ namespace WebsiteBanGiay.Controllers
 {
     public class UserController : Controller
     {
-        DatabaseDataContext db = new DatabaseDataContext();
+        dbQuanLyBanGiayDataContext db = new dbQuanLyBanGiayDataContext();
         // GET: User
         [HttpGet]
         public ActionResult Login()
@@ -31,7 +31,7 @@ namespace WebsiteBanGiay.Controllers
                     ViewData["Loi2"] = "Phải nhập mật khẩu";
                 return View();
             }
-                KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TenTK == ten && n.MatKhauTK == matkhau);
+                KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.Matkhau == matkhau || n.Taikhoan == ten);
                 if (kh != null)
                 {
                     ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
