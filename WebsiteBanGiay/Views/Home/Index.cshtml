@@ -1,21 +1,29 @@
 ﻿
 @{
+    /**/
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/_LayoutUser.cshtml";
 }
 
 
 
-    <!-- Slide -->
-    @Html.Action("SliderPartial","Home")
+<!-- Slide -->
+@Html.Action("SliderPartial", "Home")
 
-    <!-- Products -->
-    @Html.Action("ProductsPartial", "Home")
+<!--Best Products-->
+@Html.Action("BestProductPartial", "Home")
 
-    <!-- Boxes -->
-    @Html.Action("BoxesPartial", "Home")
+<!-- New Products-->
+@Html.Action("ProductNewPartial", "Home")
 
-    <!-- Features -->
-    @Html.Action("FeaturesParital", "Home")
+<!-- Products -->
+@Html.Action("ProductsPartial", "Home")
+
+<!-- Boxes -->
+@Html.Action("BoxesPartial", "Home")
+
+<!-- Features -->
+@Html.Action("FeaturesParital", "Home")
 
 

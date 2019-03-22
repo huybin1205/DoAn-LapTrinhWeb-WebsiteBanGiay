@@ -17,12 +17,12 @@
         <div class="home">
             <div class="home_container d-flex flex-column align-items-center justify-content-end">
                 <div class="home_content text-center">
-                    <div class="home_title">Product Page</div>
+                    <div class="home_title">Sản phẩm</div>
                     <div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
                         <ul class="d-flex flex-row align-items-start justify-content-start text-center">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="category.html">Woman</a></li>
-                            <li>New Products</li>
+                            <li><a href="~/">Trang chủ</a></li>
+                            <li><a href="@Url.Action("SanPham","Product",new { id=ViewBag.Ma})">@ViewBag.DanhMuc</a></li>
+                            <li>@Model.TenGiay</li>
                         </ul>
                     </div>
                 </div>
@@ -38,49 +38,21 @@
                     <!-- Product Image -->
                     <div class="col-lg-6">
                         <div class="product_image_slider_container">
-                            <img src="~/images/product_1.jpg" height="100%" width="100%"/>
-                            <div id="slider" class="flexslider">
-                                <ul class="slides">
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                    <li>
-                                        <img src="~/images/product_image_1.jpg" />
-                                    </li>
-                                </ul>
-                            </div>
+                            <img src="~/images/@Model.Anhbia" height="100%" width="100%"/>
                         </div>
                     </div>
 
                     <!-- Product Info -->
                     <div class="col-lg-6 product_col">
                         <div class="product_info">
-                            <div style="font-size:35px;color:#4A4A4A">Cool Clothing with Brown Stripes</div>
+                            <div style="font-size:35px;color:#4A4A4A">@Model.TenGiay</div>
                             <div class="product_category">In <a href="category.html">Category</a></div>
-                            <div class="product_rating_container d-flex flex-row align-items-center justify-content-start">
-                                <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                <div class="product_reviews">4.7 out of (3514)</div>
-                                <div class="product_reviews_link"><a href="#">Reviews</a></div>
-                            </div>
-                            <div class="product_price">$3<span>.99</span></div>
+                            @*<div class="product_rating_container d-flex flex-row align-items-center justify-content-start">
+            <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="product_reviews">4.7 out of (3514)</div>
+            <div class="product_reviews_link"><a href="#">Reviews</a></div>
+        </div>*@
+                            <div class="product_price">@String.Format("{0:0,0}", Model.Giaban)<span>VNĐ</span></div>
                             <div class="product_size">
                                 <div class="product_size_title">Select Size</div>
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
@@ -111,18 +83,17 @@
                                 </ul>
                             </div>
                             <div class="product_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.</p>
+                                <p>@Model.Mota</p>
                             </div>
-                            <div class="product_buttons">
-                                <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                                    <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-                                        <div><div><img src="~/images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
-                                    </div>
-                                    <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                        <div><div><img src="~/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                            <a href="@Url.Action("ThemGioHang","GioHang",new { @ma= Model.MaGiay, @url=Request.Url.ToString()})">
+                                <div class="product_buttons">
+                                    <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                                        <div style="width:100%" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                                            <div><div><img src="~/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

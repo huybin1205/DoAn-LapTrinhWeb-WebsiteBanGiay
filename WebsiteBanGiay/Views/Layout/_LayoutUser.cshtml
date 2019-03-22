@@ -70,17 +70,20 @@
                             <button class="header_search_button"><img src="~/images/search.png" alt=""></button>
                         </form>
                     </div>
-                    <!-- User -->
-                    <div class="user">
-                        <a href="@Url.Content("../User/Login")">
+                    <!-- Cart -->
+                    <div class="cart">
+                        <a href="@Url.Action("Login","User")">
                             <div>
-                                <img src="~/images/user.svg" alt="https://www.flaticon.com/authors/freepik">
-                                <div>1</div>
+                                <img class="svg" src="~/images/user.svg" alt="https://www.flaticon.com/authors/freepik">
                             </div>
                         </a>
                     </div>
-                    <!-- Cart -->
-                    <div class="cart"><a href="cart.html"><div><img class="svg" src="~/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+                    <!-- User -->
+                    <div class="user">
+                        <a href="@Url.Action("GioHang","GioHang")">
+                            @Html.Action("GioHangIcon","Home")
+                         </a>
+                    </div>
                     <!-- Phone -->
                     <div class="header_phone d-flex flex-row align-items-center justify-content-start">
                         <div><div><img src="~/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>

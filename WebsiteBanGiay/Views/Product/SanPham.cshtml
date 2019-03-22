@@ -33,8 +33,8 @@
                             <div class="product_info d-flex flex-row align-items-start justify-content-start">
                                 <div>
                                     <div>
-                                        <div class="product_name"><a href="product.html">@item.TenGiay</a></div>
-                                        <div class="product_category">In <a href="category.html">Category</a></div>
+                                        <div class="product_name"><a href="@Url.Action("ChiTietSanPham","Product",new {id=item.MaGiay })">@item.TenGiay</a></div>
+                                        <div class="product_category">Mô tả: <a href="category.html">@item.Mota</a></div>
                                     </div>
                                 </div>
                                 <div class="ml-auto text-right">
@@ -42,16 +42,15 @@
                                     <div class="product_price text-right">$3<span>.99</span></div>
                                 </div>
                             </div>
-                            <div class="product_buttons">
-                                <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                                    <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-                                        <div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
-                                    </div>
-                                    <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                        <div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                            <a href="@Url.Action("ThemGioHang","GioHang",new { @ma= @item.MaGiay, @url=Request.Url.ToString()})">
+                                <div class="product_buttons">
+                                    <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                                        <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" style="width:100%">
+                                            <div><div><img src="~/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

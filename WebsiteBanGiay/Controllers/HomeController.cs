@@ -37,6 +37,18 @@ namespace WebsiteBanGiay.Controllers
             return PartialView(list);
         }
 
+        public PartialViewResult ProductNewPartial()
+        {
+            var list = from s in db.Giays orderby s.MaGiay descending select s;
+            return PartialView(list.Take(9).ToList());
+        }
+
+        public PartialViewResult BestProductPartial()
+        {
+            var list = from s in db.Giays orderby s.SoLuongBan descending select s;
+            return PartialView(list.Take(9).ToList());
+        }
+
         public PartialViewResult NavigationPartial()
         {
             var list = from s in db.DanhMucs select s;
@@ -46,6 +58,17 @@ namespace WebsiteBanGiay.Controllers
         public PartialViewResult BranchPartial()
         {
             var list = from s in db.CuaHangs select s;
+            return PartialView(list);
+        }
+
+        public PartialViewResult GioHangIcon()
+        {
+            List<GioHang> list = Session["GioHang"] as List<GioHang>;
+            if (list == null)
+            {
+                list = new List<GioHang>();
+                Session["GioHang"] = list;
+            }
             return PartialView(list);
         }
     }

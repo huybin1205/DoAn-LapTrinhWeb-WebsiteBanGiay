@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -138,6 +139,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQuanLyBanGiay.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +164,17 @@
     <Content Include="images\Advertisement\Ad_8.jpg" />
     <Content Include="images\Advertisement\Ad_9.jpg" />
     <Content Include="images\Advertisement\Ad_GiayNu.jpg" />
+    <Content Include="images\Ad\Ad_1.jpg" />
+    <Content Include="images\Ad\Ad_10.jpg" />
+    <Content Include="images\Ad\Ad_11.jpg" />
+    <Content Include="images\Ad\Ad_2.jpg" />
+    <Content Include="images\Ad\Ad_3.jpg" />
+    <Content Include="images\Ad\Ad_4.jpg" />
+    <Content Include="images\Ad\Ad_5.jpg" />
+    <Content Include="images\Ad\Ad_6.jpg" />
+    <Content Include="images\Ad\Ad_7.jpg" />
+    <Content Include="images\Ad\Ad_8.jpg" />
+    <Content Include="images\Ad\Ad_9.jpg" />
     <Content Include="images\Banner\Banner_8Thang3.jpg" />
     <Content Include="images\Banner\Banner_Adidas.jpg" />
     <Content Include="images\Banner\Banner_Adidas2.jpg" />
@@ -172,6 +185,7 @@
     <Content Include="images\Banner\Banner_Adidas_TheThao2.jpg" />
     <Content Include="images\Banner\Banner_Adidas_TheThao3.jpg" />
     <Content Include="images\Banner\Banner_Captain.jpg" />
+    <Content Include="images\Banner\Banner_HangGiay.jpg" />
     <Content Include="images\Banner\Banner_Nam1.jpg" />
     <Content Include="images\Banner\Banner_Nam2.jpg" />
     <Content Include="images\Banner\Banner_Nam3.jpg" />
@@ -231,11 +245,21 @@
     <Content Include="images\Logo_Icon\member.png" />
     <Content Include="images\phone.svg" />
     <Content Include="images\Product\Accessories\Ao1.jpg" />
+    <Content Include="images\Product\Accessories\AO10.jpg" />
+    <Content Include="images\Product\Accessories\Ao11.jpg" />
+    <Content Include="images\Product\Accessories\Ao12.jpg" />
+    <Content Include="images\Product\Accessories\Ao13.jpg" />
+    <Content Include="images\Product\Accessories\Ao14.jpg" />
+    <Content Include="images\Product\Accessories\Ao15.jpg" />
+    <Content Include="images\Product\Accessories\Ao16.jpg" />
     <Content Include="images\Product\Accessories\Ao2.jpg" />
     <Content Include="images\Product\Accessories\Ao3.jpg" />
     <Content Include="images\Product\Accessories\Ao4.jpg" />
     <Content Include="images\Product\Accessories\Ao5.jpg" />
     <Content Include="images\Product\Accessories\Ao6.jpg" />
+    <Content Include="images\Product\Accessories\Ao7.jpg" />
+    <Content Include="images\Product\Accessories\Ao8.jpg" />
+    <Content Include="images\Product\Accessories\Ao9.jpg" />
     <Content Include="images\Product\Accessories\DayGiay1.jpg" />
     <Content Include="images\Product\Accessories\DayGiay2.jpg" />
     <Content Include="images\Product\Accessories\DayGiay3.jpg" />
@@ -243,6 +267,7 @@
     <Content Include="images\Product\Accessories\MiengLotGiay1.jpg" />
     <Content Include="images\Product\Accessories\MiengLotGiay2.jpg" />
     <Content Include="images\Product\Accessories\Non.jpg" />
+    <Content Include="images\Product\Accessories\Non1.jpg" />
     <Content Include="images\Product\Adidas\Adidas1.jpg" />
     <Content Include="images\Product\Adidas\Adidas10.jpg" />
     <Content Include="images\Product\Adidas\Adidas11.jpg" />
@@ -302,11 +327,19 @@
     <Content Include="images\Product\Bitis\BitisCaoGot4.jpg" />
     <Content Include="images\Product\Bitis\BitisCaoGot5.jpg" />
     <Content Include="images\Product\Bitis\BitisSandal1.jpg" />
+    <Content Include="images\Product\Bitis\BitisSandal10.jpg" />
     <Content Include="images\Product\Bitis\BitisSandal2.jpg" />
     <Content Include="images\Product\Bitis\BitisSandal3.jpg" />
     <Content Include="images\Product\Bitis\BitisSandal4.jpg" />
     <Content Include="images\Product\Bitis\BitisSandal5.jpg" />
+    <Content Include="images\Product\Bitis\BitisSandal6.jpg" />
+    <Content Include="images\Product\Bitis\BitisSandal7.jpg" />
+    <Content Include="images\Product\Bitis\BitisSandal8.jpg" />
+    <Content Include="images\Product\Bitis\BitisSandal9.jpg" />
     <Content Include="images\Product\Bitis\BitisTheThao1.jpg" />
+    <Content Include="images\Product\Bitis\BitisTheThao10.jpg" />
+    <Content Include="images\Product\Bitis\BitisTheThao11.jpg" />
+    <Content Include="images\Product\Bitis\BitisTheThao12.jpg" />
     <Content Include="images\Product\Bitis\BitisTheThao2.jpg" />
     <Content Include="images\Product\Bitis\BitisTheThao3.jpg" />
     <Content Include="images\Product\Bitis\BitisTheThao4.jpg" />
@@ -314,6 +347,7 @@
     <Content Include="images\Product\Bitis\BitisTheThao6.jpg" />
     <Content Include="images\Product\Bitis\BitisTheThao7.jpg" />
     <Content Include="images\Product\Bitis\BitisTheThao8.jpg" />
+    <Content Include="images\Product\Bitis\BitisTheThao9.jpg" />
     <Content Include="images\Product\Bitis\BitisTreEm1.jpg" />
     <Content Include="images\Product\Bitis\BitisTreEm2.jpg" />
     <Content Include="images\Product\Bitis\BitisTreEm3.jpg" />
@@ -485,6 +519,10 @@
     <Content Include="Views\Product\SanPham.cshtml" />
     <Content Include="Views\Product\ChiTietSanPham.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\Home\ProductNewPartial.cshtml" />
+    <Content Include="Views\Home\BestProductPartial.cshtml" />
+    <Content Include="Views\Home\GioHangIcon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

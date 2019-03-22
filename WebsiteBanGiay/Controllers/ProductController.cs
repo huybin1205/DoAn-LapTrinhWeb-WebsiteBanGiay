@@ -21,7 +21,26 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult ChiTietSanPham(int id)
         {
-            return View();
+            var giay = from s in db.Giays where s.MaGiay ==id select s;
+            List<DanhMuc> list = db.DanhMucs.ToList();
+            List<Giay> listGiay = db.Giays.ToList();
+            Giay itemgiay = new Giay();
+            foreach(Giay item in listGiay)
+            {
+                if(item.MaGiay == id)
+                {
+                    itemgiay = item;
+                }
+            }
+            foreach(DanhMuc item in list)
+            {
+                if(item.MaDM == itemgiay.MaDM)
+                {
+                    ViewBag.DanhMuc = item.TenDM;
+                    ViewBag.Ma = item.MaDM;
+                }
+            }
+            return View(giay.SingleOrDefault());
         }
     }
 }

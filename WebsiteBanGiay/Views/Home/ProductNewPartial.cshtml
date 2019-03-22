@@ -3,21 +3,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
-                <div class="section_title text-center">GIÀY CŨ</div>
+                <div class="section_title text-center">GIÀY MỚI</div>
             </div>
         </div>
         @*<div class="row page_nav_row">
-            <div class="col">
-                <div class="page_nav">
-                    <ul class="d-flex flex-row align-items-start justify-content-center">
-                        <li class="active"><a href="category.html">Women</a></li>
-                        <li><a href="category.html">Men</a></li>
-                        <li><a href="category.html">Kids</a></li>
-                        <li><a href="category.html">Home Deco</a></li>
-                    </ul>
+                <div class="col">
+                    <div class="page_nav">
+                        <ul class="d-flex flex-row align-items-start justify-content-center">
+                            <li class="active"><a href="category.html">Women</a></li>
+                            <li><a href="category.html">Men</a></li>
+                            <li><a href="category.html">Kids</a></li>
+                            <li><a href="category.html">Home Deco</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
         <div class="row products_row">
             @foreach (var item in Model)
             {
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="ml-auto text-right">
                                     <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                    <div class="product_price text-right">@String.Format("{0:0,0}", item.Giaban)<span>VNĐ</span></div>
+                                    <div class="product_price text-right">@String.Format("{0:0,0}",item.Giaban)<span>VNĐ</span></div>
                                 </div>
                             </div>
                             <a href="@Url.Action("ThemGioHang","GioHang",new { @ma= @item.MaGiay, @url=Request.Url.ToString()})">
@@ -52,7 +52,7 @@
                                         </div>
                                     </div>
                                 </div>
-                             </a>
+                            </a>
                         </div>
                     </div>
                 </div>
