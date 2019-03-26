@@ -91,11 +91,11 @@ namespace WebsiteBanGiay.Controllers
             return RedirectToAction("GioHang");
         }
 
-        public ActionResult CapNhatGioHang(int ma, FormCollection f)
+        public ActionResult CapNhatGioHang(int idGiay, FormCollection f)
         {
             List<GioHang> lst = layGioHang();
-            GioHang sp = lst.SingleOrDefault(n => n.maGiay == ma);
-            if (sp == null)
+            GioHang sp = lst.SingleOrDefault(n => n.maGiay == idGiay);
+            if (sp != null)
             {
                 sp.soLuong = int.Parse(f["txtSL"].ToString());
             }
