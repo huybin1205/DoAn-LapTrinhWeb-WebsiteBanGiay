@@ -26,7 +26,7 @@
                             <li></li>
                         </ul>
                     </div>
-                    @{ 
+                    @{
                         int i = 1;
                         foreach (var item in Model)
                         {
@@ -46,11 +46,12 @@
                                         </div>
                                         <div style="margin-right:10px" class="product_size product_text"><span>Size: </span>@item.size</div>
                                         <div style="margin-right:35px" class="product_price product_text"><span>Price: </span>@item.donGia</div>
-                                        @using (Html.BeginForm("CapNhatGioHang","GioHang",new { @idGiay = item.maGiay })) {
+                                        @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @idGiay = item.maGiay }))
+                                        {
                                             @Html.ValidationSummary(true)
                                             <div style="margin-right:25px" class="product_quantity_container">
                                                 <div class="product_quantity ml-lg-auto mr-lg-auto text-center">
-                                                    <input type="number" name="txtSL" value="@item.soLuong" class="product_text product_num" style="width:100%;height:100%;text-align:center"/>
+                                                    <input type="number" name="txtSL" value="@item.soLuong" class="product_text product_num" style="width:100%;height:100%;text-align:center" />
                                                 </div>
                                                 <div class="button button_continue" style="margin-top:5px;height:30px;width:80px;background-color:lightseagreen"><input type="submit" value="Cập nhật" class="button button_continue" style="background-color:lightseagreen;color:white;font-size:14px;font-weight:700;font-family:Roboto,sans-serif;width:100%;height:100%" /></div>
                                             </div>
@@ -62,14 +63,23 @@
                             </div>
                             i++;
                         }
+
+                        <div style="color:#4A4A4A; font-size: 20px; margin-top:30px">
+                            <div>
+                                Tổng số lượng: &nbsp @ViewBag.TongSoLuong
+                            </div>
+                            <div>
+                                Tổng thành tiền: @String.Format("{0:0,0}", ViewBag.TongThanhTien) VNĐ
+                            </div>
+                        </div>
                         <!-- Cart Buttons -->
                         <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
                             <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                <div class="button button_clear trans_200" style="background-color:darkred">@Html.ActionLink("Xóa giỏ hàng", "XoaTatCaGioHang")</div>
-                                <div class="button button_continue trans_200"><a href="@Url.Action("Index","Home")">continue shopping</a></div>
+                                <div class="button btn-danger">@Html.ActionLink("Xóa giỏ hàng", "XoaTatCaGioHang")</div>
+                                <div class="button btn-info"><a href="@Url.Action("Index","Home")">continue shopping</a></div>
+                                <div class="button button_continue trans_200"><a href="@Url.Action("DatHang","GioHang")">Đặt hàng</a></div>
                             </div>
                         </div>
-                        
                     }
                 </div>
             </div>

@@ -523,6 +523,8 @@
     <Content Include="Views\Home\ProductNewPartial.cshtml" />
     <Content Include="Views\Home\BestProductPartial.cshtml" />
     <Content Include="Views\Home\GioHangIcon.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,7 +28,7 @@ namespace WebsiteBanGiay.Controllers
             }
             if(String.IsNullOrEmpty(matkhau))
             { 
-                    ViewData["Loi2"] = "Phải nhập mật khẩu";
+                ViewData["Loi2"] = "Phải nhập mật khẩu";
                 return View();
             }
                 KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.Matkhau == matkhau || n.Taikhoan == ten);
