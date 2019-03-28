@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteBanGiay.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebsiteBanGiay.Controllers
 {
@@ -75,10 +77,14 @@ namespace WebsiteBanGiay.Controllers
             return PartialView(list);
         }
 
-        public ActionResult LoadMorePartial()
+        public ActionResult LoadMorePartial(int ? page)
         {
+            //Số sản phẩm 1 trang
+            int pageSize = 21;
+            //Số trang
+            int pageNum = (page ?? 1);
             var list = from s in db.Giays select s;
-            return View(list);
+            return View(list.ToPagedList(pageNum,pageSize));
         }
     }
 }
