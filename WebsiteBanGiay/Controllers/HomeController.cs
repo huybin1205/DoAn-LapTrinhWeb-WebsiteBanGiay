@@ -18,7 +18,8 @@ namespace WebsiteBanGiay.Controllers
 
         public PartialViewResult SliderPartial()
         {
-            return PartialView();
+            var list = from s in db.Banners orderby s.MaBanner descending select s;
+            return PartialView(list.Take(4));
         }
 
         public PartialViewResult BoxesPartial()
