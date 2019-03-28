@@ -74,5 +74,11 @@ namespace WebsiteBanGiay.Controllers
             }
             return PartialView(list);
         }
+
+        public ActionResult LoadMorePartial()
+        {
+            var list = from s in db.Giays select s;
+            return View(list);
+        }
     }
 }

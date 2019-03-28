@@ -117,3 +117,4 @@ D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.csproj.CoreCompileInpu
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.csproj.CopyComplete
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.pdb
+D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.csprojAssemblyReference.cache
