@@ -24,7 +24,9 @@ namespace WebsiteBanGiay.Controllers
 
         public PartialViewResult BoxesPartial()
         {
-            return PartialView();
+            //var list = db.QuangCaos.Take(3).ToList();
+            var list = from s in db.QuangCaos orderby s.MaQC descending select s;
+            return PartialView(list.Take(3));
         }
 
         public PartialViewResult FeaturesParital()
