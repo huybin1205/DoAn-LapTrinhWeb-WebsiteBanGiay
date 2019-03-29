@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteBanGiay.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebsiteBanGiay.Controllers
 {
@@ -11,12 +13,16 @@ namespace WebsiteBanGiay.Controllers
     {
         dbQuanLyBanGiayDataContext db = new dbQuanLyBanGiayDataContext();
         // GET: Product
-        public ActionResult SanPham(int id)
+        public ActionResult SanPham(int id, int ? page)
         {
+            //Số sản phẩm 1 trang
+            int pageSize = 21;
+            //Số trang
+            int pageNum = (page ?? 1);
             var list = from s in db.Giays where s.MaDM == id select s;
             DanhMuc dm = db.DanhMucs.SingleOrDefault(m => m.MaDM == id);
             ViewBag.TieuDe = dm.TenDM;
-            return View(list);
+            return View(list.ToPagedList(pageNum, pageSize));
         }
 
         public ActionResult ChiTietSanPham(int id)

@@ -1,4 +1,6 @@
-﻿
+﻿@using WebsiteBanGiay.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<Giay>
 @{
     ViewBag.Title = "SanPham";
     Layout = "~/Views/Layout/_LayoutUser.cshtml";
@@ -58,8 +60,38 @@
         </div>
         <div class="row load_more_row">
             <div class="col">
-                <div class="button load_more ml-auto mr-auto"><a href="#">load more</a></div>
+                <div class="button load_more ml-auto mr-auto"><a href="@Url.Action("LoadMorePartial","Home")">load more</a></div>
             </div>
         </div>
+        <center style="margin-top:50px">
+            <div>
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+            </div>
+        </center>
+
+
+        <div class="MenuTrang">
+            <div>@Html.PagedListPager(Model, page => Url.Action("LoadMorePartial", new { page = page }))</div>
+        </div>
+
+
+        <style>
+            .MenuTrang ul {
+                margin: 0 auto;
+                margin-left: 37%;
+            }
+
+            .MenuTrang li {
+                display: inline;
+                padding: 10px;
+                border: 1px solid #2FCE98;
+                margin: 10px;
+            }
+
+                .MenuTrang li:hover {
+                    background-color: #2FCE98;
+                    color: white;
+                }
+        </style>
     </div>
 </div>
