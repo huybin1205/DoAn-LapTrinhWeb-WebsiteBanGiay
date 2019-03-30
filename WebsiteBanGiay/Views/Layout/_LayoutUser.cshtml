@@ -64,15 +64,18 @@
                 </nav>
                 <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
                     <!-- Search -->
-                    <div class="header_search">
-                        <form action="#" id="header_search_form">
-                            <input type="text" class="search_input" placeholder="Search Item" required="required">
-                            <button class="header_search_button"><img src="~/images/search.png" alt=""></button>
-                        </form>
-                    </div>
+                    @using (Html.BeginForm("Search", "Home",FormMethod.Post))
+                    {
+                        <div class="header_search">
+                            <div id="header_search_form">
+                                <input type="text" name="timkiem" id="timkiem" onkeypress="runScript(event)" class="search_input" placeholder="Search Item" required="required">
+                                <button type="submit" class="header_search_button"><img src="~/images/search.png" alt=""></button>
+                            </div>
+                        </div>
+                    }
                     <!-- Cart -->
                     <div class="cart">
-                        <a href="@Url.Action("Login","User")"  title="Đăng nhập">
+                        <a href="@Url.Action("Login", "User")"  title="Đăng nhập">
                             <div>
                                 <img class="svg" src="~/images/user.svg" alt="https://www.flaticon.com/authors/freepik">
                                 
@@ -180,5 +183,14 @@
     <script src="~/plugins/progressbar/progressbar.min.js"></script>
     <script src="~/plugins/parallax-js-master/parallax.min.js"></script>
     <script src="~/js/custom.js"></script>
+    <script>
+        function runScript(e) {
+            //See notes about 'which' and 'key'
+            if (e.keyCode == 13) {
+                var tb = document.getElementById("timkiem");
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

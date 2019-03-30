@@ -86,5 +86,17 @@ namespace WebsiteBanGiay.Controllers
             var list = from s in db.Giays select s;
             return View(list.ToPagedList(pageNum,pageSize));
         }
+
+        [HttpPost]
+        public ActionResult Search(FormCollection f,int ? page)
+        {
+            string chuoi = f["timkiem"].ToString();
+            //Số sản phẩm 1 trang
+            int pageSize = 21;
+            //Số trang
+            int pageNum = (page ?? 1);
+            var lst = from s in db.Giays where s.TenGiay.Contains(chuoi.Trim()) select s;
+            return View(lst.ToPagedList(pageNum, pageSize));
+        }
     }
 }

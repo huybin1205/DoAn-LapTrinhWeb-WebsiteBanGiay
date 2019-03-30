@@ -92,6 +92,8 @@ D:\WebsiteBanGiay\WebsiteBanGiay\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\Microsoft.Web.Infrastructure.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\Newtonsoft.Json.dll
+D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.dll
+D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.Mvc.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Diagnostics.DiagnosticSource.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.Helpers.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.Mvc.dll
@@ -101,6 +103,8 @@ D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.WebPages.Deployment.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.WebPages.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.WebPages.Razor.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\WebGrease.dll
+D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.xml
+D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.Mvc.xml
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.Helpers.xml
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.Mvc.xml
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\System.Web.Optimization.xml
@@ -118,7 +122,3 @@ D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.csproj.CopyComplete
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.pdb
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.csprojAssemblyReference.cache
-D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.dll
-D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.Mvc.dll
-D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.xml
-D:\WebsiteBanGiay\WebsiteBanGiay\bin\PagedList.Mvc.xml
