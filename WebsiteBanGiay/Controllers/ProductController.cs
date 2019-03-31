@@ -22,6 +22,7 @@ namespace WebsiteBanGiay.Controllers
             var list = from s in db.Giays where s.MaDM == id select s;
             DanhMuc dm = db.DanhMucs.SingleOrDefault(m => m.MaDM == id);
             ViewBag.TieuDe = dm.TenDM;
+            ViewBag.MaDM = dm.MaDM;
             return View(list.ToPagedList(pageNum, pageSize));
         }
 

@@ -58,11 +58,6 @@
                 </div>
             }
         </div>
-        <div class="row load_more_row">
-            <div class="col">
-                <div class="button load_more ml-auto mr-auto"><a href="@Url.Action("LoadMorePartial","Home")">load more</a></div>
-            </div>
-        </div>
         <center style="margin-top:50px">
             <div>
                 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
@@ -71,7 +66,7 @@
 
 
         <div class="MenuTrang">
-            <div>@Html.PagedListPager(Model, page => Url.Action("LoadMorePartial", new { page = page }))</div>
+            <div>@Html.PagedListPager(Model, page => Url.Action("SanPham", new {id = @ViewBag.MaDM,page = page }))</div>
         </div>
 
 
