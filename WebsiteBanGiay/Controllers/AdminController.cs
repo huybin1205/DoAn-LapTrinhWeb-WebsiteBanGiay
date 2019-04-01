@@ -37,7 +37,7 @@ namespace WebsiteBanGiay.Controllers
         public ActionResult ThemMoiSP()
         {
             ViewBag.MaDM = new SelectList(db.DanhMucs.OrderBy(n => n.TenDM), "MaDM", "TenDM"); ;
-            ViewBag.MaNSX = new SelectList(db.NhaXuatBans.OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
+            ViewBag.MaNXB = new SelectList(db.NhaXuatBans.OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
             return View();
         }
 
@@ -47,7 +47,7 @@ namespace WebsiteBanGiay.Controllers
         {
             //Đưa dữ liệu vào dropdown
             ViewBag.MaDM = new SelectList(db.DanhMucs.OrderBy(n => n.TenDM), "MaDM", "TenDM"); ;
-            ViewBag.MaNSX = new SelectList(db.NhaXuatBans.OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
+            ViewBag.MaNXB = new SelectList(db.NhaXuatBans.OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
             //Kiểm tra đường dẫn
             if(fileUpload==null)
             {
