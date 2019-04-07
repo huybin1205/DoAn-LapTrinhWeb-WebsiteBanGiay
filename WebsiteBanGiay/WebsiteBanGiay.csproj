@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -157,6 +160,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\user.css" />
     <Content Include="css\font-face.css" />
     <Content Include="css\theme.css" />
@@ -787,7 +791,6 @@
     <Content Include="Views\Home\LoadMorePartial.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Layout\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\LoginAdmin.cshtml" />
     <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
     <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
     <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
@@ -824,6 +827,18 @@
     <Content Include="Views\Admin\ThemMoiSP.cshtml" />
     <Content Include="tinymce\js\tinymce\langs\readme.md" />
     <Content Include="tinymce\js\tinymce\skins\ui\oxide\fonts\tinymce-mobile.woff" />
+    <Content Include="Views\Admin\ChiTietSP.cshtml" />
+    <Content Include="Views\Admin\XoaSP.cshtml" />
+    <Content Include="Views\Admin\SuaSP.cshtml" />
+    <Content Include="Views\Home\LienHe.cshtml" />
+    <Content Include="Views\Admin\LoginAdmin.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\Admin\QuanLyNhaSanXuat.cshtml" />
+    <Content Include="Views\Admin\ThemMoiNSX.cshtml" />
+    <Content Include="Views\Admin\XoaNSX.cshtml" />
+    <Content Include="Views\Admin\ChiTietNSX.cshtml" />
+    <Content Include="Views\Admin\SuaNXS.cshtml" />
+    <Content Include="Views\Admin\QuanLyCuaHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

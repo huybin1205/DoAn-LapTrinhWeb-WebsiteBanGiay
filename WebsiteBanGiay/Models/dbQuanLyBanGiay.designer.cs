@@ -1984,6 +1984,9 @@ namespace WebsiteBanGiay.Models
                 }
             }
         }
+
+        dbQuanLyBanGiayDataContext db = new dbQuanLyBanGiayDataContext(); 
+
         [Display(Name = "Họ tên")]
         [Required(ErrorMessage = "{0} không được để trống")]
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
@@ -2096,7 +2099,7 @@ namespace WebsiteBanGiay.Models
         [Display(Name = "Tài khoản")]
         [Required(ErrorMessage = "{0} không được để trống")]
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Taikhoan", DbType="VarChar(50)")]
-		public string Taikhoan
+		public string TaiKhoan
 		{
 			get
 			{
@@ -2149,8 +2152,10 @@ namespace WebsiteBanGiay.Models
 				this._DonDatHangs.Assign(value);
 			}
 		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
+
+        public object Taikhoan { get; internal set; }
+
+        public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
 		

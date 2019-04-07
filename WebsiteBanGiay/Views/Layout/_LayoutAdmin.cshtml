@@ -35,8 +35,8 @@
 
     <!--TinyMCE-->
     @*<script src="~/tinymce/js/tinymce/tinymce.min.js"></script>*@
-    @*<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>*@
-    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    @*<script src="~/tinymce/js/tinymce/tinymce.min.js"></script>*@
     <script>tinymce.init({ selector: 'textarea' });</script>
 
 </head>
@@ -67,7 +67,7 @@
                                         <a href="index2.html">Quản lý tài khoản</a>
                                     </li>
                                     <li>
-                                        <a href="index3.html">Quản lý nhà sản xuất</a>
+                                        <a href="@Url.Action("QuanLyNhaSanXuat","Admin")">Quản lý nhà sản xuất</a>
                                     </li>
                                     <li>
                                         <a href="index4.html">Quản lý danh mục</a>
@@ -89,7 +89,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="@Url.Action("QuanLyCuaHang","Admin")">
                                     <i class="fas fa-shopping-basket"></i>
                                     <span class="bot-line"></span>Quản lý cửa hàng
                                 </a>
