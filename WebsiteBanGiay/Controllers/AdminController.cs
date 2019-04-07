@@ -156,6 +156,7 @@ namespace WebsiteBanGiay.Controllers
                 obj.Mau = g.Mau;
                 obj.Mota = g.Mota;
                 obj.Anhbia = g.Anhbia;
+                obj.Giaban = g.Giaban;
                 obj.Size = g.Size;
                 db.SubmitChanges();
                 return RedirectToAction("QuanLySanPham");

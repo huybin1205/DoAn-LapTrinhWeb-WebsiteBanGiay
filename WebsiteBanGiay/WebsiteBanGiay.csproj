@@ -519,11 +519,6 @@
     <Content Include="plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="plugins\font-awesome-4.7.0\scss\_variables.scss" />
-    <Content Include="Models\dbQuanLyBanGiay.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbQuanLyBanGiay.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="fonts\poppins\poppins-v5-latin-100.eot" />
     <Content Include="fonts\poppins\poppins-v5-latin-100.ttf" />
     <Content Include="fonts\poppins\poppins-v5-latin-100.woff" />
@@ -596,6 +591,11 @@
     <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Models\dbQuanLyBanGiay.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbQuanLyBanGiay.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

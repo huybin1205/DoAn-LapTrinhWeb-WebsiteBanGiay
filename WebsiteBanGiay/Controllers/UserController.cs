@@ -48,8 +48,8 @@ namespace WebsiteBanGiay.Controllers
                 ViewData["Loi2"] = "Phải nhập mật khẩu";
                 return View();
             }
-                KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.Matkhau == matkhau || n.Taikhoan == ten);
-                if (kh != null)
+            KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.Matkhau.CompareTo(matkhau)==0 && n.Taikhoan.CompareTo(ten)==0);
+            if (kh != null)
                 {
                     ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
                     Session["Taikhoan"] = kh;
@@ -74,41 +74,41 @@ namespace WebsiteBanGiay.Controllers
             });
             return Redirect(loginUrl.AbsoluteUri);
         }
-        public ActionResult FacebookCallback(string code)
-        {
-            var fb = new FacebookClient();
-            dynamic result = fb.Post("oauth/access_token", new
-            {
-                client_id = ConfigurationManager.AppSettings["FbAppId"],
-                client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
-                redirect_uri = RedirectUri.AbsoluteUri,
-                code = code
+        //public ActionResult FacebookCallback(string code)
+        //{
+        //    var fb = new FacebookClient();
+        //    dynamic result = fb.Post("oauth/access_token", new
+        //    {
+        //        client_id = ConfigurationManager.AppSettings["FbAppId"],
+        //        client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
+        //        redirect_uri = RedirectUri.AbsoluteUri,
+        //        code = code
 
-            });
-            var accessToken = result.access_token;
-            if (!string.IsNullOrEmpty(accessToken))
-            {
-                fb.AccessToken = accessToken;
-                dynamic me = fb.Get("me?fields=first_name,middle_name,last_name,id,email");
-                string email = me.email;
-                string username = me.email;
-                string firstname = me.first_name;
-                string middlename = me.middle_name;
-                string lastname = me.last_name;
+        //    });
+        //    var accessToken = result.access_token;
+        //    if (!string.IsNullOrEmpty(accessToken))
+        //    {
+        //        fb.AccessToken = accessToken;
+        //        dynamic me = fb.Get("me?fields=first_name,middle_name,last_name,id,email");
+        //        string email = me.email;
+        //        string username = me.email;
+        //        string firstname = me.first_name;
+        //        string middlename = me.middle_name;
+        //        string lastname = me.last_name;
 
-                var kh = new KhachHang();
-                kh.Email = email;
-                kh.Taikhoan = username;
-                kh.HoTen = firstname + "" + middlename + "" + lastname;
+        //        var kh = new KhachHang();
+        //        kh.Email = email;
+        //        kh.Taikhoan = username;
+        //        kh.HoTen = firstname + "" + middlename + "" + lastname;
 
-                db.KhachHangs.InsertOnSubmit(kh);
-                db.SubmitChanges();
-                ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
-                Session["Taikhoan"] = kh;
-            }
+        //        db.KhachHangs.InsertOnSubmit(kh);
+        //        db.SubmitChanges();
+        //        ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
+        //        Session["Taikhoan"] = kh;
+        //    }
             
-            return Redirect("/");
-        }
+        //    return Redirect("/");
+        //}
         public ActionResult Register()
         {
             return View();
@@ -136,7 +136,10 @@ namespace WebsiteBanGiay.Controllers
         }
         public ActionResult Profile()
         {
-            return View();
+            KhachHang kh = (KhachHang) Session["Taikhoan"];
+            if (kh == null)
+                return View();
+            return View(kh);
         }
 
         [HttpPost]
