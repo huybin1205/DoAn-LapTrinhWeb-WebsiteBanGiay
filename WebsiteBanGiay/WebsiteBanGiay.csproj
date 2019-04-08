@@ -839,6 +839,8 @@
     <Content Include="Views\Admin\ChiTietNSX.cshtml" />
     <Content Include="Views\Admin\SuaNXS.cshtml" />
     <Content Include="Views\Admin\QuanLyCuaHang.cshtml" />
+    <Content Include="Views\Admin\BieuDoTron.cshtml" />
+    <Content Include="Views\Admin\ThemMoiCH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

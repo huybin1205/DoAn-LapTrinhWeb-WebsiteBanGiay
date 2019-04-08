@@ -123,3 +123,4 @@ D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.pdb
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\Facebook.dll
 D:\WebsiteBanGiay\WebsiteBanGiay\bin\Facebook.xml
+D:\WebsiteBanGiay\WebsiteBanGiay\obj\Debug\WebsiteBanGiay.csprojAssemblyReference.cache

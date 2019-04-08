@@ -282,5 +282,56 @@ namespace WebsiteBanGiay.Controllers
             var lst = from s in db.CuaHangs select s;
             return View(lst.ToPagedList(pageNum, pageSize));
         }
+
+        public PartialViewResult BieuDoTron()
+        {
+            List<string> lst = new List<string>();
+            string item = "";
+            string temp = "";
+            int total = 0;
+            foreach (var dm in db.DanhMucs)
+            {
+                foreach(var g in db.Giays)
+                {
+                    if(dm.MaDM == g.MaDM)
+                    {
+                        total += (int) g.SoLuongTon;
+                    }
+                }
+                temp = dm.TenDM + "," + total;
+                item = "["+temp+"]";
+                lst.Add(item);
+            }
+            return PartialView(lst);
+        }
+
+        [HttpGet]
+        public ActionResult ThemMoiCH()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ThemMoiCH(CuaHang ch)
+        {
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    var obj = ch;
+                    db.CuaHangs.InsertOnSubmit(obj);
+                    db.SubmitChanges();
+                    return RedirectToAction("QuanLyCuaHang","Admin");
+                }
+                else
+                {
+                    Response.StatusCode = 404;
+                }
+            }catch(Exception ex)
+            {
+                ViewBag.ThongBao = "Lỗi";
+            }                      
+            return View();
+        }
     }
 }
