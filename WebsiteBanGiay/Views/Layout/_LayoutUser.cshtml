@@ -28,6 +28,29 @@
 
 </head>
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v3.2'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="2260754427509665">
+    </div>
     <!-- Menu -->
     <div class="menu">
         <!-- Search -->
@@ -64,7 +87,7 @@
                     <a href="~/">
                         <div class="d-flex flex-row align-items-center justify-content-start">
                             <div><img style="height:80px;width:100px;" class="header_search" src="~/images/Logo_Icon/Logo_ShopMain.png" alt=""></div>
-                            <div>VSS Shore</div>
+                            <div>VSS Store</div>
                         </div>
                     </a>
                 </div>
@@ -134,6 +157,8 @@
                             </div>
                             <div class="footer_about_text">
                                 <p>VSS (Vietnam Sneaker S) là hệ thống bán giày hiện đại bậc nhất Việt Nam. Chúng tôi tự hào mang đến cho đôi chân bạn sự thoải mái, sang trọng và tính tế.</p>
+                            </div>
+                            <div id="Admin" style="margin-top:20px">
                             </div>
                         </div>
                     </div>
@@ -208,11 +233,24 @@
     <!-- Để nó có thể hiểu là chúng ta đang dùng Babel-core -->
     <script type="text/babel">
         ReactDOM.render(
-        <div>+84.7157049</div>
+        <div>
+            +84.7157049
+        </div>
         ,document.getElementById("root"))
+
         ReactDOM.render(
-        <div>+84.7157049</div>
+        <div>
+            +84.7157049
+        </div>
         ,document.getElementById("root1"))
+
+        ReactDOM.render(
+        <div>
+            <a href="@Url.Action("Index","Admin")">
+                <input type="button" value="Admin" className="btn btn-danger"   />
+            </a>
+        </div>
+        ,document.getElementById("Admin"))
     </script>
 
 </body>
