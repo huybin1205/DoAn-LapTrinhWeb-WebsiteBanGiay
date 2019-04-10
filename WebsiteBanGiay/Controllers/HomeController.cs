@@ -38,8 +38,9 @@ namespace WebsiteBanGiay.Controllers
 
         public PartialViewResult ProductsPartial()
         {
-            var list = db.Giays.Take(9).ToList();
-            return PartialView(list);
+            //var list = db.Giays.Take(9).Where(n=>n.MaDM==5).ToList();
+            var list = from s in db.Giays where s.MaDM == 5 select s;
+            return PartialView(list.Take(9));
         }
 
         public PartialViewResult ProductNewPartial()

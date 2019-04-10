@@ -8,17 +8,13 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            @foreach(var item in Model)
-            {
-                @item
-            }
-            //['Work', 8],
-            //['Friends', 2],
-            //['Eat', 2],
-            //['TV', 3],
-            //['Gym', 2],
-            //['Gym1', 2],
-            //['Gym1', 2],
+            ['Work', 8],
+            ['Friends', 2],
+            ['Eat', 2],
+            ['TV', 3],
+            ['Gym', 2],
+            ['Gym1', 2],
+            ['Gym1', 2],
             ['Sleep', 7]
         ]);
 

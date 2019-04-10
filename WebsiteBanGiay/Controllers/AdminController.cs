@@ -19,13 +19,39 @@ namespace WebsiteBanGiay.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult LoginAdmin(FormCollection f)
+        {
+            var user = f["user"];
+            var pass = f["password"];
+            foreach(Admin item in db.Admins.ToList())
+            {
+                if(item.Username.CompareTo(user)==0 && item.Password.CompareTo(pass)==0)
+                {
+                    Session["Admin"] = item;
+                    return RedirectToAction("Index","Admin");
+                }
+            }
+            ViewBag.ThongBao = "Sai tên đăng nhập hoặc mật khẩu";
+            return View();
+        }
+
+
         public ActionResult Index()
         {
+            if(Session["Admin"]==null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             return View();
         }
 
         public ActionResult QuanLySanPham(int? page)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             //Số sản phẩm 1 trang
             int pageSize = 21;
             //Số trang
@@ -36,6 +62,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult ThemMoiSP()
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             ViewBag.MaDM = new SelectList(db.DanhMucs.OrderBy(n => n.TenDM), "MaDM", "TenDM"); ;
             ViewBag.MaNXB = new SelectList(db.NhaXuatBans.OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
             return View();
@@ -82,6 +112,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult ChiTietSP(int id)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             Giay sp = db.Giays.SingleOrDefault(n => n.MaGiay == id);
             ViewBag.MaSach = sp.MaGiay;
             if (sp == null)
@@ -94,6 +128,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult XoaSP(int id)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             Giay sp = db.Giays.SingleOrDefault(n => n.MaGiay == id);
             if (sp == null)
             {
@@ -121,6 +159,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult SuaSP(int id)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             Giay g = db.Giays.SingleOrDefault(n => n.MaGiay == id);
             if (g == null)
             {
@@ -169,6 +211,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult QuanLyNhaSanXuat(int? page)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             //Số sản phẩm 1 trang
             int pageSize = 21;
             //Số trang
@@ -179,6 +225,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult ThemMoiNSX()
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             return View();
         }
 
@@ -207,6 +257,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult XoaNSX(int id)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             var nsx = db.NhaXuatBans.SingleOrDefault(n => n.MaNXB == id);
             return View(nsx);
         }
@@ -236,12 +290,20 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult ChiTietNSX(int id)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             var model = db.NhaXuatBans.SingleOrDefault(n => n.MaNXB == id);
             return View(model);
         }
 
         public ActionResult SuaNXS(int id)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             var model = db.NhaXuatBans.SingleOrDefault(n => n.MaNXB == id);
             return View(model);//cai nay la httpget
         }
@@ -275,6 +337,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult QuanLyCuaHang(int? page)
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             //Số sản phẩm 1 trang
             int pageSize = 21;
             //Số trang
@@ -308,6 +374,10 @@ namespace WebsiteBanGiay.Controllers
         [HttpGet]
         public ActionResult ThemMoiCH()
         {
+            if (Session["Admin"] == null)
+            {
+                return RedirectToAction("LoginAdmin", "Admin");
+            }
             return View();
         }
 
@@ -333,5 +403,7 @@ namespace WebsiteBanGiay.Controllers
             }                      
             return View();
         }
+
+        
     }
 }
