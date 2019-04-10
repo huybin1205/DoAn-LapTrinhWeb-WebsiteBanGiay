@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Layout/_LayoutUser.cshtml";
+    <link href="../Content/user.css" rel="stylesheet" />
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+}
+
+<div class="container" style="margin-top:79px">
+    <div class="row" id="row-user-login">
+        <div class="col-lg-12">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <center>
+                    <h4>@ViewBag.ABC</h4>
+                    <h4 style="color:red;text-align:center">@ViewBag.Thongbao</h4>
+                    <div>
+                        <div>
+                            <h2>Đăng nhập</h2>
+                        </div>
+                        <div>
+                            <input name="txtTenDN" type="text" placeholder="Tên đăng nhập" />
+                            <div style="color:red">@ViewData["Loi1"]</div>
+                        </div>
+                        <div>
+                            <input name="txtMatKhau" type="password" placeholder="Mật khẩu" />
+                            <div style="color:red">@ViewData["Loi2"]</div>
+                        </div>
+                        <div>
+                            <input id="btnLogin" name="btnLogin" class="btn btn-danger" type="submit" value="Đăng nhập" />
+                        </div>
+                       
+                        <a href="@Url.Action("LoginFacebook","User")"><div class="fb-login-button" data-width="300px" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div></a>
+                        <div>
+                            <a href="@Url.Content("/User/Register")" class="btn btn-info" style="width:300px;height:35px;color:white;font-size:16px">Đăng ký</a>
+                        </div>
+                        <div>
+                            <h5>
+                                <a href="#">Quên mật khẩu?</a>
+                            </h5>
+                        </div>
+                    </div>
+                </center>
+            }
+        </div>
+    </div>
+</div>
+
+
