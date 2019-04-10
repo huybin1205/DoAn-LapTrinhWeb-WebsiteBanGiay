@@ -1,0 +1,65 @@
+﻿@model WebsiteBanGiay.Models.Giay
+
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2 style="margin-top:30px;text-align:center;">CHI TIẾT SẢN PHẨM</h2>
+
+<div>
+    @*<h4>Giay</h4>*@
+    <hr />
+    <div>
+        <div class="dl-horizontal" style="padding: 50px;">
+            <div>
+                <b>@Html.DisplayNameFor(model => model.MaDM)</b>: @Html.DisplayFor(model => model.MaDM)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.MaNXB)</b>: @Html.DisplayFor(model => model.MaNXB)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.TenGiay)</b>: @Html.DisplayFor(model => model.TenGiay)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Mota)</b>: @Html.DisplayFor(model => model.Mota)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Size)</b>: @Html.DisplayFor(model => model.Size)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Mau)</b>: @Html.DisplayFor(model => model.Mau)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Anhbia)</b>:<br />
+                <img src="~/images/@Html.DisplayFor(model => model.Anhbia)" />
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Giaban)</b>: @Html.DisplayFor(model => model.Giaban)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.NgayCapNhat)</b>: @Html.DisplayFor(model => model.NgayCapNhat)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.SoLuongBan)</b>: @Html.DisplayFor(model => model.SoLuongBan)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.SoLuongTon)</b>: @Html.DisplayFor(model => model.SoLuongTon)
+            </div>
+        </div>
+    </div>
+</div>
+<p style="text-align:center">
+    @Html.ActionLink("Sửa", "SuaSP", new { id = Model.MaGiay}) |
+    @Html.ActionLink("Quay lại", "QuanLySanPham","Admin")
+</p>

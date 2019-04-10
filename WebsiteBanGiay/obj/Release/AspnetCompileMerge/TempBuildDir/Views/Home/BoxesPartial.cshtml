@@ -1,0 +1,29 @@
+﻿<!-- Products -->
+<div class="products">
+    <div class="container">
+        <div class="row products_row">
+            @foreach (var item in Model)
+            {
+                <!-- Product -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="product">
+                        <div class="product_image"><img src="../Images/@item.Link" style="width:100%" alt=""></div>
+                        <div class="product_content">
+                            <div class="product_info d-flex flex-row align-items-start justify-content-start">
+                                <div>
+                                    <div>
+                                        <div class="product_name">
+                                            <center>
+                                                <a href="#">@item.TenQC</a>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
