@@ -20,9 +20,9 @@ namespace WebsiteBanGiay.Models
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-	
-	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CSDL_QuanLyBanGiay")]
+    using System.ComponentModel.DataAnnotations;
+
+    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CSDL_QuanLyBanGiay")]
 	public partial class dbQuanLyBanGiayDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -1984,8 +1984,10 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+
+        [Display(Name = "Họ tên")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string HoTen
 		{
 			get
@@ -2004,8 +2006,10 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
+
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
 		public string Email
 		{
 			get
@@ -2024,8 +2028,9 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiachiKH", DbType="NVarChar(200)")]
+        [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiachiKH", DbType="NVarChar(200)")]
 		public string DiachiKH
 		{
 			get
@@ -2044,8 +2049,9 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DienthoaiKH", DbType="VarChar(50)")]
+        [Display(Name = "Điện thoại")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DienthoaiKH", DbType="VarChar(50)")]
 		public string DienthoaiKH
 		{
 			get
@@ -2064,8 +2070,9 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="DateTime")]
+        [Display(Name = "Ngày sinh")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="DateTime")]
 		public System.Nullable<System.DateTime> Ngaysinh
 		{
 			get
@@ -2084,8 +2091,9 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Taikhoan", DbType="VarChar(50)")]
+        [Display(Name = "Tài khoản")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Taikhoan", DbType="VarChar(50)")]
 		public string Taikhoan
 		{
 			get
@@ -2104,8 +2112,9 @@ namespace WebsiteBanGiay.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Matkhau", DbType="VarChar(50)")]
+        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Matkhau", DbType="VarChar(50)")]
 		public string Matkhau
 		{
 			get
