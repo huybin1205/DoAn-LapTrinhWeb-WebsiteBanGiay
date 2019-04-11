@@ -400,26 +400,34 @@ namespace WebsiteBanGiay.Controllers
             return View(lst.ToPagedList(pageNum, pageSize));
         }
 
-        public PartialViewResult BieuDoTron()
+        public ActionResult BieuDoTron()
         {
-            List<string> lst = new List<string>();
-            string item = "";
-            string temp = "";
             int total = 0;
-            foreach (var dm in db.DanhMucs)
+            string abc = "";
+            List<DanhMuc> lst = new List<DanhMuc>();
+            foreach(DanhMuc dm in db.DanhMucs.ToList())
             {
-                foreach(var g in db.Giays)
+                foreach(Giay g in db.Giays.ToList())
                 {
-                    if(dm.MaDM == g.MaDM)
+                    if(g.MaDM == dm.MaDM)
                     {
                         total += (int) g.SoLuongTon;
                     }
                 }
-                temp = dm.TenDM + "," + total;
-                item = "["+temp+"]";
-                lst.Add(item);
+                abc += "['"+dm.TenDM+"', "+total+"],";
+                total = 0;
             }
-            return PartialView(lst);
+            string text = "<script type='text/javascript'>google.charts.load('current', { 'packages': ['corechart'] });" +
+                "google.charts.setOnLoadCallback(drawChart);" +
+                "function drawChart() {" +
+                "var data = google.visualization.arrayToDataTable([['Task', 'Hours per Day']," +
+                abc +
+                "]);" +
+                "var options = { 'title': 'THỐNG KÊ KHO', 'width': 434, 'height': 320 };" +
+                "var chart = new google.visualization.PieChart(document.getElementById('piechart'));" +
+                "chart.draw(data, options);}</script>";
+           
+            return Content(text);
         }
 
         [HttpGet]
