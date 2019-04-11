@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
-    
+
 }
 
 <!-- PAGE CONTENT-->
@@ -204,3 +204,5 @@
         chart.draw(data, options);
     }
 </script>
+
+@Html.Raw(TempData["msg"])

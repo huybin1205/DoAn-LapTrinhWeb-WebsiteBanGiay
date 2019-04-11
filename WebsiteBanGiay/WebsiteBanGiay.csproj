@@ -209,6 +209,7 @@
     <Content Include="images\Ad\Ad_7.jpg" />
     <Content Include="images\Ad\Ad_8.jpg" />
     <Content Include="images\Ad\Ad_9.jpg" />
+    <Content Include="images\background.jpg" />
     <Content Include="images\Banner\Banner_8Thang3.jpg" />
     <Content Include="images\Banner\Banner_Adidas.jpg" />
     <Content Include="images\Banner\Banner_Adidas2.jpg" />
@@ -843,6 +844,7 @@
     <Content Include="Views\Admin\QuanLyCuaHang.cshtml" />
     <Content Include="Views\Admin\BieuDoTron.cshtml" />
     <Content Include="Views\Admin\ThemMoiCH.cshtml" />
+    <Content Include="Views\Admin\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

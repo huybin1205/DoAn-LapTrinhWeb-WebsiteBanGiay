@@ -7,12 +7,14 @@ using WebsiteBanGiay.Models;
 using PagedList;
 using PagedList.Mvc;
 using System.IO;
+using System.Web.UI;
 
 namespace WebsiteBanGiay.Controllers
 {
     public class AdminController : Controller
     {
         dbQuanLyBanGiayDataContext db = new dbQuanLyBanGiayDataContext();
+        public string chung = "";
         // GET: Admin
         public ActionResult LoginAdmin()
         {
@@ -39,7 +41,10 @@ namespace WebsiteBanGiay.Controllers
 
         public ActionResult Index()
         {
-            if(Session["Admin"]==null)
+            if (chung.CompareTo("")==0)
+                chung = "<script>alert('Welcome to Admin');</script>";
+            TempData["msg"] = chung;
+            if (Session["Admin"]==null)
             {
                 return RedirectToAction("LoginAdmin", "Admin");
             }
@@ -50,13 +55,14 @@ namespace WebsiteBanGiay.Controllers
         {
             if (Session["Admin"] == null)
             {
-                return RedirectToAction("LoginAdmin", "Admin");
+                return RedirectToAction("Index", "Admin");
             }
-
             Admin ad = (Admin)Session["Admin"];
             PhanQuyen_Admin pq = db.PhanQuyen_Admins.SingleOrDefault(n => n.MaAdmin == ad.MaAdmin);
             if (pq.PQ_Giay == false)
-                return RedirectToAction("Index", "Admin");
+            {
+                return Content("<script language='javascript' type='text/javascript'>alert('Bạn không được phép truy cập vào mục này!');</script>");
+            }
             //Số sản phẩm 1 trang
             int pageSize = 21;
             //Số trang
@@ -449,6 +455,18 @@ namespace WebsiteBanGiay.Controllers
             return View();
         }
 
-        
+        public ActionResult Logout()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult Logout(FormCollection f)
+        {
+            ViewBag.ThongBao = "ABC";
+            Session["Admin"] = null;
+            Response.Redirect(Request.Url.ToString());
+            return View("LoginAdmin");
+        }
     }
 }
