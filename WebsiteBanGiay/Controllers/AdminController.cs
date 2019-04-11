@@ -423,7 +423,7 @@ namespace WebsiteBanGiay.Controllers
                 "var data = google.visualization.arrayToDataTable([['Task', 'Hours per Day']," +
                 abc +
                 "]);" +
-                "var options = { 'title': 'THỐNG KÊ KHO', 'width': 434, 'height': 320 };" +
+                "var options = { 'title': 'THỐNG KÊ KHO', 'width': 1000px, 'height': 1000px };" +
                 "var chart = new google.visualization.PieChart(document.getElementById('piechart'));" +
                 "chart.draw(data, options);}</script>";
            
@@ -475,6 +475,28 @@ namespace WebsiteBanGiay.Controllers
             Session["Admin"] = null;
             Response.Redirect(Request.Url.ToString());
             return View("LoginAdmin");
+        }
+
+        public ActionResult TopTotal()
+        {
+            List<TopTotal> lst = new List<TopTotal>();
+            int total = 0;
+            foreach(DanhMuc dm in db.DanhMucs.ToList())
+            {
+                foreach(Giay g in db.Giays.ToList())
+                {
+                    if(g.MaDM == dm.MaDM)
+                    {
+                        total += (int) (g.Giaban * g.SoLuongBan);
+                    }
+                }
+                TopTotal tt = new TopTotal();
+                tt.ten = dm.TenDM;
+                tt.tong = total;
+                lst.Add(tt);
+                total = 0;
+            }
+            return View(lst.OrderByDescending(n=>n.tong));
         }
     }
 }

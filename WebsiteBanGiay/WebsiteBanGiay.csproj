@@ -152,6 +152,7 @@
       <DependentUpon>dbQuanLyBanGiay.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\TopTotal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -845,6 +846,7 @@
     <Content Include="Views\Admin\BieuDoTron.cshtml" />
     <Content Include="Views\Admin\ThemMoiCH.cshtml" />
     <Content Include="Views\Admin\Logout.cshtml" />
+    <Content Include="Views\Admin\TopTotal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
