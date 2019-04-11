@@ -128,6 +128,10 @@ namespace WebsiteBanGiay.Controllers
         [HttpPost]
         public ActionResult DatHang(FormCollection f)
         {
+            string ten = "";
+            int gia = 0;
+            int sl = 0;
+
             DonDatHang ddh = new DonDatHang();
             KhachHang kh = (KhachHang) Session["Taikhoan"];
             List<GioHang> gh = layGioHang();
@@ -146,10 +150,23 @@ namespace WebsiteBanGiay.Controllers
                 ctdh.Soluong = item.soLuong;
                 ctdh.DonGia = (decimal)item.donGia;
                 db.ChiTietDonHangs.InsertOnSubmit(ctdh);
+                
+                foreach(Giay g in db.Giays.ToList())
+                {
+                    if(g.MaGiay == ctdh.MaGiay)
+                    {
+                        ten += g.TenGiay+",";
+                    }
+                }
+                gia += (int) (ctdh.DonGia);
             }
             db.SubmitChanges();
+
+            string url = "https://www.baokim.vn/payment/product/version11?business=huyprosoccer@gmail.com&id=&order_description=ABC" + "&product_name=" + ten.Substring(0,(ten.Length-1)) + "&product_price="+ gia + "&product_quantity="+sl + "&total_amount=" + gia + "&url_cancel=&url_detail=&url_success=" + "~/GioHang/XacNhanDonHang";
+
             Session["GioHang"] = null;
-            return RedirectToAction("XacNhanDonHang","GioHang");
+            return Redirect(url);
+            //return RedirectToAction("XacNhanDonHang","GioHang");
         }
 
         public ActionResult XacNhanDonHang()
