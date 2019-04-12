@@ -142,10 +142,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:31</publishTime>
     </File>
     <File Include="bin/WebsiteBanGiay.dll">
-      <publishTime>04/12/2019 21:28:06</publishTime>
+      <publishTime>04/12/2019 23:09:13</publishTime>
     </File>
     <File Include="bin/WebsiteBanGiay.pdb">
-      <publishTime>04/12/2019 21:28:06</publishTime>
+      <publishTime>04/12/2019 23:09:13</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2215,7 +2215,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Layout/_LayoutAdmin.cshtml">
-      <publishTime>04/11/2019 17:23:22</publishTime>
+      <publishTime>04/12/2019 21:44:04</publishTime>
     </File>
     <File Include="Views/Layout/_LayoutUser.cshtml">
       <publishTime>04/12/2019 19:07:55</publishTime>
