@@ -167,7 +167,7 @@ namespace WebsiteBanGiay.Controllers
                 sl += (int) a.Soluong;
                 gia += (int) (a.DonGia * a.Soluong);
             }
-            string url = "https://www.baokim.vn/payment/product/version11?business=huyprosoccer@gmail.com&id=&order_description=ABC" + "&product_name=" + ten.Substring(0,(ten.Length-1)) + "&product_price="+ gia + "&product_quantity="+sl + "&total_amount=" + (gia*sl) + "&url_cancel=&url_detail=&url_success=" + Url.Action("XacNhanDonHang","GioHang",new {idDH = ddh.MaDonHang, kt = 1});
+            string url = "https://www.baokim.vn/payment/product/version11?business=huyprosoccer@gmail.com&id=&order_description=ABC" + "&product_name=" + ten.Substring(0,(ten.Length-1)) + "&product_price="+ gia + "&product_quantity="+sl + "&total_amount=" + gia + "&url_cancel=&url_detail=&url_success=" + Url.Action("XacNhanDonHang","GioHang",new {idDH = ddh.MaDonHang, kt = 1});
 
             Session["GioHang"] = null;
             return Redirect(url);
