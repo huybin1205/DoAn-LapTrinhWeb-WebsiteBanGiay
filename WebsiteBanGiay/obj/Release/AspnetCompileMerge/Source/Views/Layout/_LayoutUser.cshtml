@@ -15,19 +15,18 @@
     <link rel="stylesheet" type="text/css" href="~/styles/responsive.css">
 
     <!-- Thêm script từ trang chủ: https://reactjs.org/ -->
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js">
-    </script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
-    </script>
+    <script src="~/Scripts/react.development.js"></script>
+    <script src="~/Scripts/react-dom.development.js"></script>
     <!-- Thêm script Babel-core -->
     <!-- Babel-core giúp thực hiện việc viết code giống với html -->
-    <script src="https:unpkg.com/babel-core@5.2.17/browser.min.js">
-    </script>
+    <script src="~/Scripts/browser.min.js"></script>
 
 
 
 </head>
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <!-- Load Facebook SDK for JavaScript -->
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
@@ -42,9 +41,23 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="2260754427509665"
+         theme_color="#2FCE98">
+    </div>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="2260754427509665"
+         theme_color="#fa3c4c">
+    </div>
 
     <!-- Your customer chat code -->
     <div class="fb-customerchat"
@@ -247,7 +260,7 @@
         ReactDOM.render(
         <div>
             <a href="@Url.Action("Index","Admin")">
-                <input type="button" value="Admin" className="btn btn-danger"   />
+                <input type="button" value="Admin" className="btn btn-danger" />
             </a>
         </div>
         ,document.getElementById("Admin"))

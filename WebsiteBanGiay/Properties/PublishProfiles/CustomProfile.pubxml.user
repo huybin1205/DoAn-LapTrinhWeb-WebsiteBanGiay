@@ -142,10 +142,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:31</publishTime>
     </File>
     <File Include="bin/WebsiteBanGiay.dll">
-      <publishTime>04/11/2019 21:48:34</publishTime>
+      <publishTime>04/12/2019 21:09:37</publishTime>
     </File>
     <File Include="bin/WebsiteBanGiay.pdb">
-      <publishTime>04/11/2019 21:48:34</publishTime>
+      <publishTime>04/12/2019 21:09:37</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -1486,13 +1486,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:30</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>04/11/2019 03:18:58</publishTime>
+      <publishTime>04/12/2019 21:09:50</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
       <publishTime>04/10/2019 21:19:29</publishTime>
+    </File>
+    <File Include="Scripts/browser.min.js">
+      <publishTime>04/12/2019 19:05:26</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.js">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -1526,6 +1529,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>04/10/2019 21:19:29</publishTime>
+    </File>
+    <File Include="Scripts/react-dom.development.js">
+      <publishTime>04/12/2019 19:05:26</publishTime>
+    </File>
+    <File Include="Scripts/react.development.js">
+      <publishTime>04/12/2019 19:05:26</publishTime>
     </File>
     <File Include="styles/bootstrap-4.1.2/bootstrap.min.css">
       <publishTime>04/10/2019 21:19:30</publishTime>
@@ -2101,10 +2110,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Admin/Index.cshtml">
-      <publishTime>04/11/2019 19:16:25</publishTime>
+      <publishTime>04/12/2019 20:38:15</publishTime>
     </File>
     <File Include="Views/Admin/LoginAdmin.cshtml">
-      <publishTime>04/11/2019 20:24:39</publishTime>
+      <publishTime>04/12/2019 18:33:00</publishTime>
     </File>
     <File Include="Views/Admin/Logout.cshtml">
       <publishTime>04/11/2019 18:03:27</publishTime>
@@ -2113,10 +2122,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Admin/QuanLyNhaSanXuat.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/12/2019 20:42:16</publishTime>
     </File>
     <File Include="Views/Admin/QuanLySanPham.cshtml">
       <publishTime>04/11/2019 18:25:43</publishTime>
+    </File>
+    <File Include="Views/Admin/SoDonHang.cshtml">
+      <publishTime>04/12/2019 20:36:50</publishTime>
+    </File>
+    <File Include="Views/Admin/SoKhachHang.cshtml">
+      <publishTime>04/12/2019 20:40:01</publishTime>
+    </File>
+    <File Include="Views/Admin/SPHienCo.cshtml">
+      <publishTime>04/12/2019 20:25:30</publishTime>
     </File>
     <File Include="Views/Admin/SuaNXS.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2133,6 +2151,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Admin/ThemMoiSP.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
+    <File Include="Views/Admin/TongDoanhThu.cshtml">
+      <publishTime>04/12/2019 20:32:53</publishTime>
+    </File>
     <File Include="Views/Admin/TopTotal.cshtml">
       <publishTime>04/11/2019 19:26:47</publishTime>
     </File>
@@ -2143,7 +2164,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/GioHang/DatHang.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/12/2019 20:58:09</publishTime>
+    </File>
+    <File Include="Views/GioHang/DatHangOnline.cshtml">
+      <publishTime>04/12/2019 18:15:04</publishTime>
     </File>
     <File Include="Views/GioHang/GioHang.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2194,7 +2218,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/11/2019 17:23:22</publishTime>
     </File>
     <File Include="Views/Layout/_LayoutUser.cshtml">
-      <publishTime>04/11/2019 20:39:55</publishTime>
+      <publishTime>04/12/2019 19:07:55</publishTime>
     </File>
     <File Include="Views/Product/ChiTietSanPham.cshtml">
       <publishTime>04/11/2019 16:46:10</publishTime>
@@ -2215,7 +2239,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/11/2019 03:38:56</publishTime>
+      <publishTime>04/12/2019 21:09:44</publishTime>
     </File>
   </ItemGroup>
 </Project>

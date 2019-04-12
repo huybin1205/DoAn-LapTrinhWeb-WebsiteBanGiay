@@ -1,0 +1,35 @@
+﻿<style>
+    .divLog:hover {
+        background-color: #4272d7;
+        color: white;
+    }
+
+    .divLog {
+        background-color: white;
+        color: black;
+    }
+
+        .divLog > #btnLogout:hover {
+            background-color: #4272d7;
+            color: white;
+            cursor: pointer;
+        }
+
+    #btnLogout {
+        background-color: transparent;
+        height: 50px;
+    }
+</style>
+<div>
+    @ViewBag.ThongBao
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="account-dropdown__footer">
+        <center class="divLog">
+            <i class="zmdi zmdi-power"></i>
+            <input id="btnLogout" type="submit" value="Logout" />
+        </center>
+    </div>
+}
