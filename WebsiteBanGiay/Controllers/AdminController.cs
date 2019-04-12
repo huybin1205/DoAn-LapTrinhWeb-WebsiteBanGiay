@@ -424,7 +424,7 @@ namespace WebsiteBanGiay.Controllers
                 "var data = google.visualization.arrayToDataTable([" +
                 "['Task', 'Hours per Day']," + abc +
                 "]);" +
-                "var options = { 'title': 'My Average Day', 'width': 434, 'height': 320 };" +
+                "var options = { 'title': 'THỐNG KÊ HÀNG TỒN KHO', 'width': 434, 'height': 320 };" +
                 "var chart = new google.visualization.PieChart(document.getElementById('piechart'));" +
                 "chart.draw(data, options);" +
                 "}" +
@@ -500,6 +500,39 @@ namespace WebsiteBanGiay.Controllers
                 total = 0;
             }
             return View(lst.OrderByDescending(n=>n.tong));
+        }
+
+        public PartialViewResult SPHienCo()
+        {
+            List<Giay> lst = db.Giays.ToList();
+            ViewBag.TongSoMatHang = lst.Count;
+            return PartialView(lst);
+        }
+
+        public PartialViewResult TongDoanhThu()
+        {
+            int gia= 0;
+            List<ChiTietDonHang> lst = db.ChiTietDonHangs.ToList();
+            foreach(ChiTietDonHang ct in lst)
+            {
+                gia += (int)(ct.DonGia * ct.Soluong);
+            }
+            ViewBag.TongDoanhThu = gia;
+            return PartialView(lst);
+        }
+
+        public PartialViewResult SoDonHang()
+        {
+            List<DonDatHang> lst = db.DonDatHangs.ToList();
+            ViewBag.SoDonHang = lst.Count;
+            return PartialView(lst);
+        }
+
+        public PartialViewResult SoKhachHang()
+        {
+            List<KhachHang> lst = db.KhachHangs.ToList();
+            ViewBag.SoKhachHang = lst.Count;
+            return PartialView(lst);
         }
     }
 }

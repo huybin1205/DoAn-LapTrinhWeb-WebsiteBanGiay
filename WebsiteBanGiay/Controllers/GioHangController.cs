@@ -137,7 +137,8 @@ namespace WebsiteBanGiay.Controllers
             List<GioHang> gh = layGioHang();
             ddh.MaKH = kh.MaKH;
             ddh.NgayDat = DateTime.Now;
-            var ngaygiao = String.Format("{0:MM/dd/yyyy}", f["NgayGiao"]);
+            var ngaygiao = String.Format("{0:MM/dd/yyyy}",f["NgayGiao"].ToString());
+            ddh.NgayGiao = DateTime.Parse(ngaygiao);
             ddh.TinhTrangGiaoHang = false;
             ddh.DaThanhToan = false;
             db.DonDatHangs.InsertOnSubmit(ddh);
@@ -164,7 +165,7 @@ namespace WebsiteBanGiay.Controllers
             foreach(ChiTietDonHang a in db.ChiTietDonHangs.Where(n=>n.MaDonHang == ddh.MaDonHang).ToList())
             {
                 sl += (int) a.Soluong;
-                gia += (int) a.DonGia;
+                gia += (int) (a.DonGia * a.Soluong);
             }
             string url = "https://www.baokim.vn/payment/product/version11?business=huyprosoccer@gmail.com&id=&order_description=ABC" + "&product_name=" + ten.Substring(0,(ten.Length-1)) + "&product_price="+ gia + "&product_quantity="+sl + "&total_amount=" + (gia*sl) + "&url_cancel=&url_detail=&url_success=" + Url.Action("XacNhanDonHang","GioHang",new {idDH = ddh.MaDonHang, kt = 1});
 
@@ -201,6 +202,7 @@ namespace WebsiteBanGiay.Controllers
             ddh.MaKH = kh.MaKH;
             ddh.NgayDat = DateTime.Now;
             var ngaygiao = String.Format("{0:MM/dd/yyyy}", f["NgayGiao"]);
+            ddh.NgayGiao = DateTime.Parse(ngaygiao);
             ddh.TinhTrangGiaoHang = false;
             ddh.DaThanhToan = false;
             db.DonDatHangs.InsertOnSubmit(ddh);

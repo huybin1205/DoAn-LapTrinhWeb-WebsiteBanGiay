@@ -851,6 +851,10 @@
     <Content Include="Views\Admin\Logout.cshtml" />
     <Content Include="Views\Admin\TopTotal.cshtml" />
     <Content Include="Views\GioHang\DatHangOnline.cshtml" />
+    <Content Include="Views\Admin\SPHienCo.cshtml" />
+    <Content Include="Views\Admin\TongDoanhThu.cshtml" />
+    <Content Include="Views\Admin\SoDonHang.cshtml" />
+    <Content Include="Views\Admin\SoKhachHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
