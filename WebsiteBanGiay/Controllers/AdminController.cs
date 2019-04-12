@@ -211,7 +211,7 @@ namespace WebsiteBanGiay.Controllers
                 if (fileUpload != null)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Images/Product"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Images/Product/"), fileName);
                     g.Anhbia = "/Product/" + fileName;
                 }
                 //Lưu vào CSDL
@@ -370,9 +370,9 @@ namespace WebsiteBanGiay.Controllers
                     var obj = db.NhaXuatBans.SingleOrDefault(p => p.MaNXB == nsx.MaNXB);
                     obj.TenNXB = nsx.TenNXB;
                     obj.Diachi = nsx.Diachi;
-                    obj.DienThoai = nsx.Diachi;
+                    obj.DienThoai = nsx.DienThoai;
                     db.SubmitChanges();
-                    ViewBag.ThongBao = "Thành công";
+                    return RedirectToAction("QuanLyNhaSanXuat", "Admin");
                 }
                 else
                 {
