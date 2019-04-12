@@ -142,10 +142,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:31</publishTime>
     </File>
     <File Include="bin/WebsiteBanGiay.dll">
-      <publishTime>04/11/2019 03:38:54</publishTime>
+      <publishTime>04/11/2019 21:48:34</publishTime>
     </File>
     <File Include="bin/WebsiteBanGiay.pdb">
-      <publishTime>04/11/2019 03:38:54</publishTime>
+      <publishTime>04/11/2019 21:48:34</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -551,6 +551,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="images/Advertisement/Ad_GiayNu.jpg">
       <publishTime>04/10/2019 21:19:29</publishTime>
+    </File>
+    <File Include="images/background.jpg">
+      <publishTime>04/11/2019 17:15:45</publishTime>
     </File>
     <File Include="images/Banner/Banner_8Thang3.jpg">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -1271,6 +1274,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="images/search.png">
       <publishTime>04/10/2019 21:19:29</publishTime>
+    </File>
+    <File Include="images/thanhtoan-l.png">
+      <publishTime>04/11/2019 16:31:37</publishTime>
     </File>
     <File Include="images/user.svg">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2086,7 +2092,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:30</publishTime>
     </File>
     <File Include="Views/Admin/BieuDoTron.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/11/2019 18:54:21</publishTime>
     </File>
     <File Include="Views/Admin/ChiTietNSX.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2095,10 +2101,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Admin/Index.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/11/2019 19:16:25</publishTime>
     </File>
     <File Include="Views/Admin/LoginAdmin.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/11/2019 20:24:39</publishTime>
+    </File>
+    <File Include="Views/Admin/Logout.cshtml">
+      <publishTime>04/11/2019 18:03:27</publishTime>
     </File>
     <File Include="Views/Admin/QuanLyCuaHang.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2107,7 +2116,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Admin/QuanLySanPham.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/11/2019 18:25:43</publishTime>
     </File>
     <File Include="Views/Admin/SuaNXS.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2123,6 +2132,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Admin/ThemMoiSP.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
+    </File>
+    <File Include="Views/Admin/TopTotal.cshtml">
+      <publishTime>04/11/2019 19:26:47</publishTime>
     </File>
     <File Include="Views/Admin/XoaNSX.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2158,7 +2170,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Home/LienHe.cshtml">
-      <publishTime>04/10/2019 22:25:55</publishTime>
+      <publishTime>04/11/2019 17:12:07</publishTime>
     </File>
     <File Include="Views/Home/LoadMorePartial.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>
@@ -2179,13 +2191,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 21:19:29</publishTime>
     </File>
     <File Include="Views/Layout/_LayoutAdmin.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/11/2019 17:23:22</publishTime>
     </File>
     <File Include="Views/Layout/_LayoutUser.cshtml">
-      <publishTime>04/11/2019 01:18:58</publishTime>
+      <publishTime>04/11/2019 20:39:55</publishTime>
     </File>
     <File Include="Views/Product/ChiTietSanPham.cshtml">
-      <publishTime>04/10/2019 21:19:29</publishTime>
+      <publishTime>04/11/2019 16:46:10</publishTime>
     </File>
     <File Include="Views/Product/SanPham.cshtml">
       <publishTime>04/10/2019 21:19:29</publishTime>

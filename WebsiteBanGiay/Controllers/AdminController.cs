@@ -417,16 +417,19 @@ namespace WebsiteBanGiay.Controllers
                 abc += "['"+dm.TenDM+"', "+total+"],";
                 total = 0;
             }
-            string text = "<script type='text/javascript'>google.charts.load('current', { 'packages': ['corechart'] });" +
+            string text = "<script type='text/javascript'>" +
+                "google.charts.load('current', { 'packages': ['corechart'] });" +
                 "google.charts.setOnLoadCallback(drawChart);" +
                 "function drawChart() {" +
-                "var data = google.visualization.arrayToDataTable([['Task', 'Hours per Day']," +
-                abc +
+                "var data = google.visualization.arrayToDataTable([" +
+                "['Task', 'Hours per Day']," + abc +
                 "]);" +
-                "var options = { 'title': 'THỐNG KÊ KHO', 'width': 1000px, 'height': 1000px };" +
+                "var options = { 'title': 'My Average Day', 'width': 434, 'height': 320 };" +
                 "var chart = new google.visualization.PieChart(document.getElementById('piechart'));" +
-                "chart.draw(data, options);}</script>";
-           
+                "chart.draw(data, options);" +
+                "}" +
+                "</script>";
+
             return Content(text);
         }
 
