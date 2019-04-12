@@ -142,6 +142,7 @@ namespace WebsiteBanGiay.Controllers
             ddh.DaThanhToan = false;
             db.DonDatHangs.InsertOnSubmit(ddh);
             db.SubmitChanges();
+
             foreach(var item in gh)
             {
                 ChiTietDonHang ctdh = new ChiTietDonHang();
@@ -158,11 +159,14 @@ namespace WebsiteBanGiay.Controllers
                         ten += g.TenGiay+",";
                     }
                 }
-                gia += (int) (ctdh.DonGia);
             }
             db.SubmitChanges();
-
-            string url = "https://www.baokim.vn/payment/product/version11?business=huyprosoccer@gmail.com&id=&order_description=ABC" + "&product_name=" + ten.Substring(0,(ten.Length-1)) + "&product_price="+ gia + "&product_quantity="+sl + "&total_amount=" + gia + "&url_cancel=&url_detail=&url_success=" + Url.Action("XacNhanDonHang","GioHang",new {idDH = ddh.MaDonHang, kt = 1});
+            foreach(ChiTietDonHang a in db.ChiTietDonHangs.Where(n=>n.MaDonHang == ddh.MaDonHang).ToList())
+            {
+                sl += (int) a.Soluong;
+                gia += (int) a.DonGia;
+            }
+            string url = "https://www.baokim.vn/payment/product/version11?business=huyprosoccer@gmail.com&id=&order_description=ABC" + "&product_name=" + ten.Substring(0,(ten.Length-1)) + "&product_price="+ gia + "&product_quantity="+sl + "&total_amount=" + (gia*sl) + "&url_cancel=&url_detail=&url_success=" + Url.Action("XacNhanDonHang","GioHang",new {idDH = ddh.MaDonHang, kt = 1});
 
             Session["GioHang"] = null;
             return Redirect(url);
