@@ -6,7 +6,7 @@
 }
 
 <h2 style="margin-top:30px;text-align:center;">SỬA SẢN PHẨM</h2>
-@using (Html.BeginForm("SuaSP","Admin",FormMethod.Post,new {enctype="multipart/form-data" }))
+@using (Html.BeginForm("SuaSP", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -66,8 +66,6 @@
         <div class="form-group">
             <span>Ảnh bìa</span>
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.Anhbia, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Anhbia, "", new { @class = "text-danger" })*@
                 <input type="hidden" name="Anhbia" value="@Model.Anhbia"/>
                 <input type="file" name="fileUpload" />
                 <img src="~/images/@Model.Anhbia"/>

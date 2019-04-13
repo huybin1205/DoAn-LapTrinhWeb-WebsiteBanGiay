@@ -212,6 +212,8 @@ namespace WebsiteBanGiay.Controllers
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
                     var path = Path.Combine(Server.MapPath("~/Images/Product/"), fileName);
+                    //Lưu hình
+                    fileUpload.SaveAs(path);
                     g.Anhbia = "/Product/" + fileName;
                 }
                 //Lưu vào CSDL
