@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebsiteBanGiay",
+    "\\WebsiteBanGiay\\Controllers",
+    "\\WebsiteBanGiay\\Models",
+    "\\WebsiteBanGiay\\Views",
+    "\\WebsiteBanGiay\\Views\\Admin"
   ],
-  "SelectedNode": "\\WebsiteBanGiay.sln",
+  "SelectedNode": "\\WebsiteBanGiay\\Controllers\\AdminController.cs",
   "PreviewInSolutionExplorer": false
 }

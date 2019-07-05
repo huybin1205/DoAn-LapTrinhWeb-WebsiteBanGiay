@@ -1,0 +1,87 @@
+﻿@using WebsiteBanDoThoiTrang.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<ThuongHieu>
+@{
+    ViewBag.Title = "QuanLyThuongHieu";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2 style="margin-top:30px;text-align:center;">QUẢN LÝ THƯƠNG HIỆU</h2>
+
+<p style="float:right">
+    @Html.ActionLink("Thêm mới nhà sản xuất", "ThemMoiNSX", "Admin", new { @class = "btn btn-default" })
+</p>
+<div class="container">
+    <div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <tr style="background-color:#dee2e6">
+                    <th>
+                        Tên
+                    </th>
+                    <th>
+                        Địa chỉ
+                    </th>
+                    <th>
+                        Điện thoại
+                    </th>
+                    <th></th>
+                </trstyle="background-color:#dee2e6">
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenThuongHieu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Diachi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DienThoai)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("SuaNXS","Admin",new { id=item.MaThuongHieu})"><button type="button" class="btn btn-danger" style="width:80px">Edit</button></a>
+                            <br />
+                            <a style="margin-top:2px" href="@Url.Action("ChiTietNSX","Admin",new { id = item.MaThuongHieu})"><button type="button" class="btn btn-info">Details</button></a>
+                            <br />
+                            <a style="margin-top:2px" href="@Url.Action("XoaNSX","Admin",new { id = item.MaThuongHieu})"><button type="button" class="btn btn-success" style="width:80px">Delete</button></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<center style="margin-top:50px">
+    <div>
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+    </div>
+</center>
+
+
+<div class="MenuTrang">
+    <div>@Html.PagedListPager(Model, page => Url.Action("QuanLySanPham", new { id = @ViewBag.MaDM, page = page }))</div>
+</div>
+
+
+<style>
+    .MenuTrang ul {
+        margin: 0 auto;
+        margin-left: 37%;
+    }
+
+    .MenuTrang li {
+        display: inline;
+        padding: 10px;
+        border: 1px solid #2FCE98;
+        margin: 10px;
+    }
+
+        .MenuTrang li:hover {
+            background-color: #2FCE98;
+            color: white;
+        }
+</style>

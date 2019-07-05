@@ -1,0 +1,126 @@
+﻿@using WebsiteBanDoThoiTrang.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<MatHang>
+@{
+    ViewBag.Title = "QuanLySanPham";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+    <h2 style="margin-top:30px;text-align:center;">  QUẢN LÝ SẢN PHẨM </h2>
+
+    <p>
+        <div style="float:right">
+            @Html.ActionLink("Thêm mới sản phẩm", "ThemMoiSP", "Admin", new { @class = "btn btn-default" })
+        </div>
+    </p>
+
+<div class="container">
+    <div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <tr style="background-color:#dee2e6">
+                    <th >
+                        Mã danh mục
+                    </th>
+                    <th>
+                        Mã thương hiệu
+                    </th>
+                    <th>
+                        Tên sản phẩm
+                    </th>
+                    <th>
+                        Mô tả
+                    </th>
+                    <th>
+                        Hình ảnh
+                    </th>
+                    <th>
+                        Giá bán
+                    </th>
+                    <th>
+                        Số lượng bán
+                    </th>
+                    <th>
+                        Số lượng tồn
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaDM)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaThuongHieu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenHang)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mota)
+                        </td>
+                        <td>
+                            <img height="100" width="100" src="~/Images/@Html.DisplayFor(modelItem => item.Anhbia)" />
+                        </td>
+                        <td>
+                            @String.Format("{0:0,0}",item.Giaban)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SoLuongBan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SoLuongTon)
+                        </td>
+                        <td>
+                            
+                            <a href="@Url.Action("SuaSP","Admin",new { id=item.MaHang})"><button type="button" class="btn btn-danger" style="width:80px">Edit</button></a>
+                            <br />
+                            <a style="margin-top:4px" href="@Url.Action("ChiTietSP","Admin",new { id = item.MaHang})"><button type="button" class="btn btn-info">Details</button></a>
+                            <br />
+                            <a style="margin-top:4px" href="@Url.Action("XoaSP","Admin",new { id = item.MaHang})"><button type="button" class="btn btn-success" style="width:80px">Delete</button></a>
+                           
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<center style="margin-top:50px">
+    <div>
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+    </div>
+</center>
+
+
+<div class="MenuTrang">
+    <div>@Html.PagedListPager(Model, page => Url.Action("QuanLySanPham", new { id = @ViewBag.MaDM, page = page }))</div>
+</div>
+
+
+<style>
+    .MenuTrang ul {
+        margin: 0 auto;
+        margin-left: 37%;
+    }
+
+    .MenuTrang li {
+        display: inline;
+        padding: 10px;
+        border: 1px solid #2FCE98;
+        margin: 10px;
+    }
+
+        .MenuTrang li:hover {
+            background-color: #2FCE98;
+            color: white;
+        }
+
+</style>
+
+@Html.Raw(TempData["Message"]);
+

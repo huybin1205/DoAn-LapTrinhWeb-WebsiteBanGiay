@@ -1,0 +1,90 @@
+﻿@using WebsiteBanDoThoiTrang.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<MatHang>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Layout/_LayoutUser.cshtml";
+}
+
+<!-- Products -->
+<div class="products" style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section_title text-center">SẢN PHẨM</div>
+            </div>
+        </div>
+        <div class="row products_row">
+            @foreach (var item in Model)
+            {
+                <!-- Product -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="product">
+                        <div class="product_image"><img src="~/Images/@item.Anhbia" style="width:100%" alt=""></div>
+                        <div class="product_content">
+                            <div class="product_info d-flex flex-row align-items-start justify-content-start">
+                                <div>
+                                    <div>
+                                        <div class="product_name"><a href="@Url.Action("ChiTietSanPham","Product",new { id=item.MaHang})">@item.TenHang</a></div>
+                                    </div>
+                                </div>
+                                <div class="ml-auto text-right">
+                                    <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+                                    <div class="product_price text-right">@String.Format("{0:0,0}", item.Giaban)<span>VNĐ</span></div>
+                                </div>
+                            </div>
+                            <a href="@Url.Action("ThemGioHang","GioHang",new { @ma= @item.MaHang, @url=Request.Url.ToString()})">
+                                <div class="product_buttons">
+                                    <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                                        <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" style="width:100%">
+                                            <div>
+                                                <div>
+                                                    <img src="~/images/cart.svg" class="svg" alt="">
+                                                    <div>
+                                                        +
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<center>
+    <div>
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+    </div>
+</center>
+
+
+<div class="MenuTrang">
+    <div>@Html.PagedListPager(Model, page => Url.Action("Search", new { page = page }))</div>
+</div>
+
+
+<style>
+    .MenuTrang ul {
+        margin: 0 auto;
+        margin-left: 37%;
+    }
+
+    .MenuTrang li {
+        display: inline;
+        padding: 10px;
+        border: 1px solid #2FCE98;
+        margin: 10px;
+    }
+
+        .MenuTrang li:hover {
+            background-color: #2FCE98;
+            color: white;
+        }
+</style>
+

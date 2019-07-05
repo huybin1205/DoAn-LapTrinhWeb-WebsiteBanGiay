@@ -1,0 +1,72 @@
+﻿@model WebsiteBanDoThoiTrang.Models.MatHang
+
+@{
+    ViewBag.Title = "XoaSP";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2 style="margin-top:30px;text-align:center;">XÓA SẢN PHẨM</h2>
+
+<h3 style="margin-top:30px;text-align:center;color:red">BẠN CÓ CHẮC CHẮN MUỐN XÓA SẢN PHẨM NÀY?</h3>
+<div>
+    
+    <hr />
+    <div>
+        <div class="dl-horizontal" style="padding: 50px;">
+            <div>
+                <b>@Html.DisplayNameFor(model => model.MaDM)</b>: @Html.DisplayFor(model => model.MaDM)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.MaThuongHieu)</b>: @Html.DisplayFor(model => model.MaThuongHieu)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.TenHang)</b>: @Html.DisplayFor(model => model.TenHang)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Mota)</b>: @Html.DisplayFor(model => model.Mota)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Size)</b>: @Html.DisplayFor(model => model.Size)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Mau)</b>: @Html.DisplayFor(model => model.Mau)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Anhbia)</b>:<br />
+                <img src="~/images/@Html.DisplayFor(model => model.Anhbia)" />
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Giaban)</b>: @Html.DisplayFor(model => model.Giaban)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.NgayCapNhat)</b>: @Html.DisplayFor(model => model.NgayCapNhat)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.SoLuongBan)</b>: @Html.DisplayFor(model => model.SoLuongBan)
+            </div>
+
+            <div>
+                <b>@Html.DisplayNameFor(model => model.SoLuongTon)</b>: @Html.DisplayFor(model => model.SoLuongTon)
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div style="text-align:center" class="form-actions no-color">
+            <input style="background:red" type="submit" value="Xóa sản phẩm" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

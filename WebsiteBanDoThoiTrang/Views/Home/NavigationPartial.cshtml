@@ -1,0 +1,11 @@
+﻿@using WebsiteBanDoThoiTrang.Models;
+
+<div class="menu_nav">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="/Product/SanPham?id=@item.MaDM">@item.TenDM</a></li>
+        }
+        <li><a href="@Url.Action("LienHe","Home",new { id=1})">Liên hệ</a></li>
+    </ul>
+</div>
